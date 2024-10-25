@@ -34,6 +34,7 @@ This boilerplate provides a solid foundation for building desktop applications w
 - **Webpack**: A module bundler for modern JavaScript applications.
 - **Babel**: A JavaScript compiler.
 - **PostCSS**: A tool for transforming CSS with JavaScript plugins.
+- **Ant Design**: A React UI library with a clean and modern design.
 
 ## Prerequisites
 
@@ -177,6 +178,35 @@ Update the `package.json` file to point to your icon files:
   }
 }
 ```
+
+Update the `main.js` file to select the icon based on OS:
+```javascript
+// ...
+
+function createWindow() {
+  let iconPath;
+  if (process.platform === 'win32') {
+    iconPath = path.join(__dirname, 'assets', 'icon.ico');
+  } else if (process.platform === 'darwin') {
+    iconPath = path.join(__dirname, 'assets', 'icon.icns');
+  } else {
+    iconPath = path.join(__dirname, 'assets', 'icon.png');
+  }
+
+  const mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    icon: iconPath,
+    webPreferences: {
+      contextIsolation: true,
+      enableRemoteModule: false,
+      preload: path.join(__dirname, 'preload.js'),
+    },
+  });
+
+  // ...
+}
+``` 
 
 ## Contributing
 
