@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
+    "clsx": "^2.1.1",
     "daisyui": "^4.12.13",
     "glob": "^11.0.0",
     "lru-cache": "^11.0.1",
@@ -45,6 +46,7 @@
     "rimraf": "^6.0.1",
     "source-map-resolve": "^0.6.0",
     "source-map-url": "^0.4.1",
+    "tailwind-merge": "^2.5.4",
     "tailwindcss": "^3.4.14",
     "urix": "^0.1.0",
     "uuid": "^10.0.0"
